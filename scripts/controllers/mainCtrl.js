@@ -18,4 +18,6 @@ angular.module('randomUserTest')
     	$('#'+id+' .container').children().show();
     }
 
+    window.location = '#tab1';
+
 });
