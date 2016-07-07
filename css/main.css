@@ -1,0 +1,11 @@
+.botao {
+	border-radius: 0px;
+}
+
+blockquote small:before {
+    content: '';
+}
+
+blockquote small{
+    text-align: justify;
+}

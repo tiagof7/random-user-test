@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>Desafio - Max Milhas</title>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+</head>
+
+<body ng-app="randomUserTest">
+
+	<script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+
+	<!--AngularJs Controllers -->
+	<script type="text/javascript" src="scripts/app.js"></script>
+	<script type="text/javascript" src="scripts/controllers/ordemBlocoCtrl.js"></script>
+
+	<nav class="navbar navbar-default navbar-static-top navbar-inverse">
+	  <div class="container" >
+	    <ul class="nav navbar-nav">
+	      <li class="active">
+	        <a href="/max"><span class="glyphicon glyphicon-home"></span> Home</a>
+	      </li>
+	    </ul>
+	    <ul class="nav navbar-nav navbar-right">
+	      <li>
+	        <a href="https://github.com/tiagof7/random-user-test">
+	          <span class="glyphicon glyphicon-link"></span> 
+	          <span>Source on GitHub</span>
+	        </a>
+	      </li>
+	      <li>
+	        <a href="https://www.linkedin.com/in/tiagof7">
+	          <span class="glyphicon glyphicon-user"></span>
+	          <span>Developed by Tiago Ferreira </span>
+	        </a>
+	      </li>
+	    </ul>
+	  </div>
+	</nav>
+
+<div class="container" ng-controller="OrdemBlocoCtrl">
+
+	<div class="row">
+		<button type="button" class="btn btn-info botao pull-right" ng-click="trocarOrdem()">Trocar ordem</button>
+	</div>
+
+	<div class="row" id="blocos">
+		<div class="col-sm-4 bloco">
+			<h3>TÍTULO 01</h3>
+			<img src="images/image1.jpg" class="img-responsive"/>
+		</div>
+		<div class="col-sm-4 bloco">
+			<h3>TÍTULO 02</h3>
+			<img src="images/image2.jpg" class="img-responsive"/>
+		</div>
+		<div class="col-sm-4 bloco">
+			<h3>TÍTULO 03</h3>
+			<strong>Como acumular milhas no dia a dia?</strong>
+			<blockquote>
+				<small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer turpis odio, vulputate a rutrum et, eleifend at lectus. In vitae feugiat nisl. Sed sed posuere turpis, lobortis venenatis urna.</small>
+			</blockquote>
+			<a href="">Leia mais</a>
+		</div>
+
+	</div>	
+
+</div>
+
+
+</body>
+</html>
