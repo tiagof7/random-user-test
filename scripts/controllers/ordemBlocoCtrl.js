@@ -6,4 +6,5 @@ angular.module('randomUserTest')
     $scope.trocarOrdem = function(){
     	$('#blocos').append($('.bloco').get().reverse());
     }
+
 });

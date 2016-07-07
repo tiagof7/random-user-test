@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('randomUserTest', []);
+var app = angular.module('randomUserTest', []);

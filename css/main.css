@@ -14,3 +14,12 @@ blockquote small:before {
 blockquote small{
     text-align: justify;
 }
+
+.usuarios {
+	padding-top: 30px;
+}
+
+.usuarios .row .col-sm-4 {
+	padding-top: 7px;
+	padding-top: 10px;
+}

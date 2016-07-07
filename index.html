@@ -1,7 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html ng-app="randomUserTest">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="target_country" content="br" />
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
 
 	<title>Desafio - Max Milhas</title>
@@ -12,9 +13,6 @@
 	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
-</head>
-
-<body ng-app="randomUserTest">
 
 	<script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
@@ -23,6 +21,12 @@
 	<!--AngularJs Controllers -->
 	<script type="text/javascript" src="scripts/app.js"></script>
 	<script type="text/javascript" src="scripts/controllers/ordemBlocoCtrl.js"></script>
+	<script type="text/javascript" src="scripts/controllers/usuariosCtrl.js"></script>
+</head>
+
+<body>
+
+	
 
 	<nav class="navbar navbar-default navbar-static-top navbar-inverse">
 	  <div class="container" >
@@ -69,10 +73,39 @@
 			<blockquote>
 				<small>Seja nas promoções com cartão de crédito, seja nas promoções dos programas de fidelidade das cias. aéreas, há sempre espaço para estratégias inteligentes que permitem maximizar o acúmulo de milhas, sem necessariamente pagar tarifas extras por tal ou ...</small>
 			</blockquote>
-			<a href="">Leia mais</a>
+			<a href="https://www.maxmilhas.com.br/">Leia mais</a>
 		</div>
-
 	</div>	
+
+	<div class="container usuarios" ng-controller="UsuariosCtrl">
+		<div>
+			<button type="button" class="btn btn-info botao" ng-click="addUsuario()">Criar usuário</button>
+			<div class="pull-right">
+				<span class="text-muted">Filtros: </span>
+				<form role="form">
+				<label class="checkbox-inline"><input type="checkbox" ng-model="homem">Homens</label>
+				<label class="checkbox-inline"><input type="checkbox" ng-model="mulher">Mulheres</label>
+				</form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4" ng-repeat="usuario in usuarios | filter: filtroUsuarios">
+				<div class="row">
+					<div class="col-xs-4">
+						<img ng-src="{{usuario.picture.large}}" class="img-responsive img-circle"/>
+					</div>
+					<div class="col-xs-8">
+						<h4>{{usuario.name.first}} {{usuario.name.last}}</h4>
+						<p class="text-muted">
+							{{usuario.email}}
+							</br>
+							{{usuario.cell}}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 </div>
 
