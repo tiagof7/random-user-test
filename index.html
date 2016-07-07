@@ -20,19 +20,18 @@
 
 	<!--AngularJs Controllers -->
 	<script type="text/javascript" src="scripts/app.js"></script>
+	<script type="text/javascript" src="scripts/controllers/mainCtrl.js"></script>
 	<script type="text/javascript" src="scripts/controllers/ordemBlocoCtrl.js"></script>
 	<script type="text/javascript" src="scripts/controllers/usuariosCtrl.js"></script>
 </head>
 
-<body>
-
-	
+<body ng-controller="MainCtrl">
 
 	<nav class="navbar navbar-default navbar-static-top navbar-inverse">
 	  <div class="container" >
 	    <ul class="nav navbar-nav">
 	      <li class="active">
-	        <a href="/max"><span class="glyphicon glyphicon-home"></span> Home</a>
+	        <a href="#"><span class="glyphicon glyphicon-home"></span> Home</a>
 	      </li>
 	    </ul>
 	    <ul class="nav navbar-nav navbar-right">
@@ -77,34 +76,48 @@
 		</div>
 	</div>	
 
-	<div class="container usuarios" ng-controller="UsuariosCtrl">
-		<div>
-			<button type="button" class="btn btn-info botao" ng-click="addUsuario()">Criar usuário</button>
-			<div class="pull-right">
-				<span class="text-muted">Filtros: </span>
-				<form role="form">
-				<label class="checkbox-inline"><input type="checkbox" ng-model="homem">Homens</label>
-				<label class="checkbox-inline"><input type="checkbox" ng-model="mulher">Mulheres</label>
-				</form>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-4" ng-repeat="usuario in usuarios | filter: filtroUsuarios">
-				<div class="row">
-					<div class="col-xs-4">
-						<img ng-src="{{usuario.picture.large}}" class="img-responsive img-circle"/>
+	<div class="container">
+		<article class="tabs" >
+
+			<section id="{{aba.id}}" ng-repeat="aba in abas">
+
+				<h2 ng-click="mudaAba(aba.id)"><a href="#{{aba.id}}">{{aba.nome}}</a></h2>
+
+				<div class="container usuarios" ng-controller="UsuariosCtrl">
+					<div>
+						<button type="button" class="btn btn-info botao" ng-click="addUsuario()">Criar usuário</button>
+						<div class="pull-right">
+							<span class="text-muted">Filtros: </span>
+							<form role="form">
+							<label class="checkbox-inline"><input type="checkbox" ng-model="homem">Homens</label>
+							<label class="checkbox-inline"><input type="checkbox" ng-model="mulher">Mulheres</label>
+							</form>
+						</div>
 					</div>
-					<div class="col-xs-8">
-						<h4>{{usuario.name.first}} {{usuario.name.last}}</h4>
-						<p class="text-muted">
-							{{usuario.email}}
-							</br>
-							{{usuario.cell}}
-						</p>
+					<div class="row">
+						<div class="col-sm-4" ng-repeat="usuario in usuarios | filter: filtroUsuarios">
+							<div class="row">
+								<div class="col-xs-4">
+									<img ng-src="{{usuario.picture.large}}" class="img-responsive img-circle"/>
+								</div>
+								<div class="col-xs-8">
+									<h4>{{usuario.name.first}} {{usuario.name.last}}</h4>
+									<p class="text-muted">
+										{{usuario.email}}
+										</br>
+										{{usuario.cell}}
+									</p>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
-		</div>
+
+			</section>
+
+			
+
+		</article>
 	</div>
 
 </div>
