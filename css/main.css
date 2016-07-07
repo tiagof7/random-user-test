@@ -188,7 +188,7 @@ ul.horizontal {
 
 li {
     float: left;
-    margin-left: 2em;
+
 }
 
 li a, .dropbtn {
@@ -207,4 +207,5 @@ li a:hover, .dropdown:hover .dropbtn {
 
 ul.horizontal li a.active {
     background-color: #4CAF50;
+    margin-left: 2em;
 }
