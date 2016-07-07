@@ -4,7 +4,7 @@ body {
 }
 
 /* line 9, ../sass/main.sass */
-button {
+.button {
   border-radius: 0px;
 }
 
@@ -19,7 +19,7 @@ button {
 }
 
 /* line 18, ../sass/main.sass */
-button.expand {
+.button.expand {
   padding-left: 0.88889rem;
   padding-right: 0.88889rem;
   width: 100%;
