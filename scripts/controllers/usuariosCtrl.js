@@ -9,6 +9,8 @@ angular.module('randomUserTest')
     $scope.mulher = true;
 
     $scope.addUsuario = function(){
+        //$('body').addClass("loading");
+
     	$.ajax({
 		  url: 'https://randomuser.me/api/',
 		  dataType: 'json',
@@ -17,6 +19,7 @@ angular.module('randomUserTest')
 		  	if (!angular.isUndefined(data.results[0])) {
 		  		$scope.usuarios.push(data.results[0]);
 		  		$scope.$apply();
+                //$('body').removeClass("loading");
 		  	}
 		  }
 		});

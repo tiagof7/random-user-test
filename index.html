@@ -75,7 +75,7 @@
 			<a href="https://www.maxmilhas.com.br/">Leia mais</a>
 		</div>
 	</div>	
-
+	<hr>
 	<div class="container">
 		<article class="tabs" >
 
@@ -86,7 +86,7 @@
 				<div class="container usuarios" ng-controller="UsuariosCtrl">
 					<div>
 						<button type="button" class="btn btn-info botao" ng-click="addUsuario()">Criar usuário</button>
-						<div class="pull-right">
+						<div class="pull-right" ng-show="usuarios.length > 0">
 							<span class="text-muted">Filtros: </span>
 							<form role="form">
 							<label class="checkbox-inline"><input type="checkbox" ng-model="homem">Homens</label>
@@ -94,9 +94,11 @@
 							</form>
 						</div>
 					</div>
+					</br>
+					<hr>
 					<div class="row">
 						<div class="col-sm-4" ng-repeat="usuario in usuarios | filter: filtroUsuarios">
-							<div class="row">
+							<div class="row" >
 								<div class="col-xs-4">
 									<img ng-src="{{usuario.picture.large}}" class="img-responsive img-circle"/>
 								</div>
@@ -121,6 +123,8 @@
 	</div>
 
 </div>
+
+<div class="modal"></div>
 
 
 </body>
