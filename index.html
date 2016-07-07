@@ -9,6 +9,7 @@
 
 	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="css/main.scss">
 	
 	<link rel="stylesheet" type="text/css" media="screen" href="foundation/css/foundation.min.css" />
 
@@ -21,6 +22,7 @@
 	<script type="text/javascript" src="scripts/controllers/mainCtrl.js"></script>
 	<script type="text/javascript" src="scripts/controllers/ordemBlocoCtrl.js"></script>
 	<script type="text/javascript" src="scripts/controllers/usuariosCtrl.js"></script>
+
 </head>
 
 <body ng-controller="MainCtrl" >
@@ -66,7 +68,7 @@
 	</div>	
 	<hr>
 	<div class="container">
-		<article class="tabs" >
+		<article class="tabs row" >
 
 			<section id="{{aba.id}}" ng-repeat="aba in abas" class="container">
 
