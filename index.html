@@ -11,6 +11,9 @@
 	<!--<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">-->
 
 	<link rel="stylesheet" type="text/css" media="screen" href="foundation/css/foundation.min.css" />
+	<!-- <link rel="stylesheet" type="text/css" media="screen" href="foundation/css/style.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="foundation/css/normalize.css" /> -->
+
 
 	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
@@ -28,59 +31,22 @@
 	<script type="text/javascript" src="scripts/controllers/usuariosCtrl.js"></script>
 </head>
 
-<body ng-controller="MainCtrl" class=" hide-extras">
+<body ng-controller="MainCtrl" >
 
-	<nav class="navbar navbar-default navbar-static-top navbar-inverse">
-	  <div class="container" >
-	    <ul class="nav navbar-nav">
-	      <li class="active">
-	        <a href=""><span class="glyphicon glyphicon-home"></span> Home</a>
-	      </li>
-	    </ul>
-	    <ul class="nav navbar-nav navbar-right">
-	      <li>
-	        <a href="https://github.com/tiagof7/random-user-test">
-	          <span class="glyphicon glyphicon-link"></span> 
-	          <span>Source on GitHub</span>
-	        </a>
-	      </li>
-	      <li>
-	        <a href="https://www.linkedin.com/in/tiagof7">
-	          <span class="glyphicon glyphicon-user"></span>
-	          <span>Developed by Tiago Ferreira </span>
-	        </a>
-	      </li>
-	    </ul>
-	  </div>
-	</nav>
-	<!-- <nav class="top-bar hide-for-small">
-		<ul class="title-area">
-			<li class="name">
-				<h1>
-					 <a href=""><span class="fi-home"></span> Home</a>
-				</h1>
-			</li>
+	<div class="container" >
+		<ul class="horizontal">
+		  <li>
+		  	<a class="active" href="">Home</a>
+		  </li>
+		  <li class="rightli" style="float:right">
+		  	<a href="https://github.com/tiagof7/random-user-test">Source on GitHub</a>
+		  </li>
+		  <li class="rightli" style="float:right">
+		  	<a href="https://www.linkedin.com/in/tiagof7">Developed by Tiago Ferreira</a>
+		  </li>
 		</ul>
+	</div>
 
-		<section class="top-bar-section">
-			<ul class="right">
-				
-				<li class="download-button">
-					<a href="https://github.com/tiagof7/random-user-test">
-			          <span class="glyphicon glyphicon-link"></span> 
-			          <span>Source on GitHub</span>
-			        </a>
-				</li>
-				<li>
-					<a href="https://www.linkedin.com/in/tiagof7">
-			          <span class="glyphicon glyphicon-user"></span>
-			          <span>Developed by Tiago Ferreira </span>
-			        </a>
-				</li>
-
-			</ul>
-		</section>
-	</nav> -->
 
 <div class="container" ng-controller="OrdemBlocoCtrl">
 
