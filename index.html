@@ -110,24 +110,24 @@
 	<div class="container">
 		<article class="tabs" >
 
-			<section id="{{aba.id}}" ng-repeat="aba in abas">
+			<section id="{{aba.id}}" ng-repeat="aba in abas" class="container">
 
 				<h2 ng-click="mudaAba(aba.id)"><a href="#{{aba.id}}">{{aba.nome}}</a></h2>
 
 				<div class="container usuarios" ng-controller="UsuariosCtrl">
-						<div class="row medium-up-12 large-up-8"> 
+						<div class="row large-up-6"> 
 							<div class="small-12 columns">
 								<a class="button expand" ng-click="addUsuario()">Criar usuário</a>
 							</div>
+							<div class="row button-right" ng-show="usuarios.length > 0">
+							    <div class="large-12 columns">
+							      <label>Filtros:</label>
+							      <input id="checkbox1" type="checkbox" ng-model="homem"><label for="checkbox1" >Homens</label>
+							      <input id="checkbox2" type="checkbox" ng-model="mulher"><label for="checkbox2" >Mulheres</label>
+							    </div>
+							</div>
 						</div>
 
-						<div class="row button-right" ng-show="usuarios.length > 0">
-						    <div class="large-12 columns">
-						      <label>Filtros:</label>
-						      <input id="checkbox1" type="checkbox" ng-model="homem"><label for="checkbox1" >Homens</label>
-						      <input id="checkbox2" type="checkbox" ng-model="mulher"><label for="checkbox2" >Mulheres</label>
-						    </div>
-						</div>
 					</br>
 					<hr>
 					<div class="row medium-up-2 large-up-3 small-up-1">
