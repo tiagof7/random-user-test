@@ -7,8 +7,10 @@
 
 	<title>Desafio - Max Milhas</title>
 
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+	<!--<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">-->
+	<!--<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">-->
+
+	<link rel="stylesheet" type="text/css" media="screen" href="foundation/css/foundation.min.css" />
 
 	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
@@ -16,7 +18,8 @@
 
 	<script type="text/javascript" src="scripts/jquery-2.2.4.min.js"></script>
 	<script type="text/javascript" src="scripts/angular.min.js"></script>
-	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<!--<script src="bootstrap/js/bootstrap.min.js"></script>-->
+	<script src="foundation/js/vendor/foundation.min.js"></script>
 
 	<!--AngularJs Controllers -->
 	<script type="text/javascript" src="scripts/app.js"></script>
@@ -25,7 +28,7 @@
 	<script type="text/javascript" src="scripts/controllers/usuariosCtrl.js"></script>
 </head>
 
-<body ng-controller="MainCtrl">
+<body ng-controller="MainCtrl" class=" hide-extras">
 
 	<nav class="navbar navbar-default navbar-static-top navbar-inverse">
 	  <div class="container" >
@@ -50,23 +53,51 @@
 	    </ul>
 	  </div>
 	</nav>
+	<!-- <nav class="top-bar hide-for-small">
+		<ul class="title-area">
+			<li class="name">
+				<h1>
+					 <a href=""><span class="fi-home"></span> Home</a>
+				</h1>
+			</li>
+		</ul>
+
+		<section class="top-bar-section">
+			<ul class="right">
+				
+				<li class="download-button">
+					<a href="https://github.com/tiagof7/random-user-test">
+			          <span class="glyphicon glyphicon-link"></span> 
+			          <span>Source on GitHub</span>
+			        </a>
+				</li>
+				<li>
+					<a href="https://www.linkedin.com/in/tiagof7">
+			          <span class="glyphicon glyphicon-user"></span>
+			          <span>Developed by Tiago Ferreira </span>
+			        </a>
+				</li>
+
+			</ul>
+		</section>
+	</nav> -->
 
 <div class="container" ng-controller="OrdemBlocoCtrl">
 
 	<div class="row">
-		<button type="button" class="btn btn-info botao pull-right" ng-click="trocarOrdem()">Trocar ordem</button>
+		<button type="button" class="button button-right"  ng-click="trocarOrdem()">Trocar ordem</button>
 	</div>
 
-	<div class="row" id="blocos">
-		<div class="col-sm-4 bloco">
+	<div class="row medium-up-2 large-up-3" id="blocos">
+		<div class="column bloco">
 			<h3>TÍTULO 01</h3>
-			<img src="images/image1.jpg" class="img-responsive"/>
+			<img src="images/image1.jpg" />
 		</div>
-		<div class="col-sm-4 bloco">
+		<div class="column bloco">
 			<h3>TÍTULO 02</h3>
-			<img src="images/image2.jpg" class="img-responsive"/>
+			<img src="images/image2.jpg" />
 		</div>
-		<div class="col-sm-4 bloco">
+		<div class="column bloco">
 			<h3>TÍTULO 03</h3>
 			<h5><strong>Como acumular milhas no dia a dia?</strong></h5>
 			<blockquote>
@@ -84,27 +115,30 @@
 				<h2 ng-click="mudaAba(aba.id)"><a href="#{{aba.id}}">{{aba.nome}}</a></h2>
 
 				<div class="container usuarios" ng-controller="UsuariosCtrl">
-					<div>
-						<button type="button" class="btn btn-info botao" ng-click="addUsuario()">Criar usuário</button>
-						<div class="pull-right" ng-show="usuarios.length > 0">
-							<span class="text-muted">Filtros: </span>
-							<form role="form">
-							<label class="checkbox-inline"><input type="checkbox" ng-model="homem">Homens</label>
-							<label class="checkbox-inline"><input type="checkbox" ng-model="mulher">Mulheres</label>
-							</form>
+						<div class="row medium-up-12 large-up-8"> 
+							<div class="small-12 columns">
+								<a class="button expand" ng-click="addUsuario()">Criar usuário</a>
+							</div>
 						</div>
-					</div>
+
+						<div class="row button-right" ng-show="usuarios.length > 0">
+						    <div class="large-12 columns">
+						      <label>Filtros:</label>
+						      <input id="checkbox1" type="checkbox" ng-model="homem"><label for="checkbox1" >Homens</label>
+						      <input id="checkbox2" type="checkbox" ng-model="mulher"><label for="checkbox2" >Mulheres</label>
+						    </div>
+						</div>
 					</br>
 					<hr>
-					<div class="row">
-						<div class="col-sm-4" ng-repeat="usuario in usuarios | filter: filtroUsuarios">
-							<div class="row" >
-								<div class="col-xs-4">
-									<img ng-src="{{usuario.picture.large}}" class="img-responsive img-circle"/>
+					<div class="row medium-up-2 large-up-3 small-up-1">
+						<div class="columns" ng-repeat="usuario in usuarios | filter: filtroUsuarios" >
+							<div class="row medium-up-2 large-up-2 small-up-2 usuarios-list " >
+								<div class="column">
+									<img ng-src="{{usuario.picture.large}}" class="img-circle"/>
 								</div>
-								<div class="col-xs-8">
+								<div class="column">
 									<h4>{{usuario.name.first}} {{usuario.name.last}}</h4>
-									<p class="text-muted">
+									<p class="subheader">
 										{{usuario.email}}
 										</br>
 										{{usuario.cell}}

@@ -2,8 +2,22 @@ body {
  	font-family: 'Roboto', sans-serif;
 }
 
-.botao {
+.button {
 	border-radius: 0px;
+}
+
+.button-right {
+	float: right;
+}
+
+.img-circle{
+	border-radius: 70px;
+}
+
+.button.expand {
+    padding-left: 0.88889rem;
+    padding-right: 0.88889rem;
+    width: 100%;
 }
 
 blockquote small:before {
@@ -18,13 +32,20 @@ blockquote small{
 	padding-top: 30px;
 }
 
-.usuarios .row .col-sm-4 {
+.usuarios-list {
 	padding-top: 7px;
 	padding-top: 10px;
+	padding-right: 90px
 }
 
 .box-usuario {
-	background-color: #EAEAEA;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #d8d8d8;
+    margin-bottom: 1.11111rem;
+    padding: 1.11111rem;
+    background: #f2f2f2;
+    color: #333333;
 }
 
 article.tabs
