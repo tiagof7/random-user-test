@@ -11,7 +11,10 @@ angular.module('randomUserTest')
     	nome:'Aba 3', id:'tab3'}];
 
     $scope.mudaAba = function(id){
+    	//Esconde o conteúdo das abas
     	$('section .container').children().hide();
+    	
+    	//Exibe somente a aba que foi clicada
     	$('#'+id+' .container').children().show();
     }
 
